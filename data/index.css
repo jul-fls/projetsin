@@ -1,0 +1,9 @@
+.OneLine {white-space: nowrap;} 
+.OneLine * {display: inline;}
+
+.button{
+    width:25%;
+}
+.button-large{
+    width:65%;
+}
