@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Controle de l'Aquarium</title>
+    <meta name="description" content="Ceci est la page de controle de l'aquarium">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="w3.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/x-icon" href="/pictures/favicon.ico" />
+    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    <div class="w3-card w3-blue w3-padding-small w3-center">
+        <h1>Page de controle de l'aquarium</h1>
+        <script type="text/javascript">
+            var ladate = new Date()
+            document.write(ladate.getDate() + "/" + (ladate.getMonth() + 1) + "/" + ladate.getFullYear())
+        </script>
+        <div id="div_clock"></div>
+    </div>
+
+    <div id="div_light" class="w3-margin w3-center w3-card w3-padding-24">
+        <h2 class="w3-padding">Eclairage</h2>
+        <button onclick="lightonButton()" class="w3-button button w3-green w3-xlarge w3-ripple w3-wide">ON</button>
+        <button onclick="lightoffButton()" class="w3-button button w3-red w3-xlarge w3-ripple w3-wide">OFF</button>
+    </div>
+
+    <div id="div_temp" class="w3-margin w3-center w3-card w3-padding-24">
+        <h2 class="w3-padding">Température de l'eau</h2>
+        <h3 class="w3-padding">Chauffage</h3>
+        <button onclick="heatonButton()" class="w3-button button w3-green w3-xlarge w3-ripple w3-wide">ON</button>
+        <button onclick="heatoffButton()" class="w3-button button w3-red w3-xlarge w3-ripple w3-wide">OFF</button>
+        <div class="OneLine">Régulation Automatique <input type="checkbox" id="terms" value="1" onclick="auto_heat_changed(this)" class="w3-check" /></div>
+        <div class="w3-margin w3-center w3-padding-24">
+            <p>Température souhaitée de l'eau</p>
+            <select id="select_desired_temp" class="w3-select" style="width: 20%;">
+        <option value="" disabled selected>Choisir</option>
+        <option value="0">0°C</option>
+        <option value="1">1°C</option>
+        <option value="2">2°C</option>
+        <option value="3">3°C</option>
+        <option value="4">4°C</option>
+        <option value="5">5°C</option>
+        <option value="6">6°C</option>
+        <option value="7">7°C</option>
+        <option value="8">8°C</option>
+        <option value="9">9°C</option>
+        <option value="10">10°C</option>
+        <option value="11">11°C</option>
+        <option value="12">12°C</option>
+        <option value="13">13°C</option>
+        <option value="14">14°C</option>
+        <option value="15">15°C</option>
+        <option value="16">16°C</option>
+        <option value="17">17°C</option>
+        <option value="18">18°C</option>
+        <option value="19">19°C</option>
+        <option value="20">20°C</option>
+        <option value="21">21°C</option>
+        <option value="22">22°C</option>
+        <option value="23">23°C</option>
+        <option value="24">24°C</option>
+        <option value="25">25°C</option>
+        <option value="26">26°C</option>
+        <option value="27">27°C</option>
+        <option value="28">28°C</option>
+        <option value="29">29°C</option>
+        <option value="30">30°C</option>
+      </select>
+            <button id="apply_temp_changed" class="w3-button w3-border w3-ripple w3-wide" onclick="desired_temp_Button()">Appliquer</button>
+        </div>
+        <div class="OneLine">
+            <p id="actual_temp">Température actuelle de l'eau : </p>
+            <p id="actual_temp_placeholder">Récupération des données</p>
+            <p>°C</p>
+        </div>
+    </div>
+
+    <div id="div_distrib" class="w3-margin w3-center w3-card w3-padding-24">
+        <h3 class="w3-padding">Distribution de nourriture</h3>
+        <button onclick="distribButton()" class="w3-button button-large w3-green w3-xlarge w3-ripple w3-wide">Distribution
+      <br />manuelle</button>
+        <div class="OneLine">
+            <p id="last_distrib">Derniere distribution : </p>
+            <p id="last_distrib_placeholder"></p>
+        </div>
+        <div class="OneLine">
+            <p id="next_distrib">Prochaine distribution : </p>
+            <p id="next_distrib_placeholder"></p>
+        </div>
+    </div>
+</body>
+
+</html>
