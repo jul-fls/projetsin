@@ -122,3 +122,4 @@ function RefreshDistribs() {
         document.getElementById("next_distrib_placeholder").innerHTML = time.getDate() + "/" + (time.getMonth() + 1) + "/" + time.getFullYear() + " 09:30";
     };
 };
+.
