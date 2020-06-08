@@ -195,4 +195,3 @@ void loop(){                                                                    
     distrib();                                                                     //Appel la fonction distrib
   }
 }//-----Fin de la fonction Loop-----//
-.
